@@ -8,7 +8,6 @@ import "openzeppelin-contracts/contracts/utils/cryptography/ECDSA.sol";
 //     function upload(string memory _data) external returns (bytes32);
 // }
 
-
 contract PadiRegistry is Ownable {
     using ECDSA for bytes32;
 
