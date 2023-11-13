@@ -1,12 +1,13 @@
-// SPDX-License-Identifier: SEE LICENSE IN LICENSE
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-import "openzeppelin-contracts/access/Ownable.sol";
-import "openzeppelin-contracts/utils/cryptography/ECDSA.sol";
+import "openzeppelin-contracts/contracts/access/Ownable.sol";
+import "openzeppelin-contracts/contracts/utils/cryptography/ECDSA.sol";
 
 // interface IPFS {
 //     function upload(string memory _data) external returns (bytes32);
 // }
+
 
 contract PadiRegistry is Ownable {
     using ECDSA for bytes32;
