@@ -9,7 +9,7 @@ import "openzeppelin-contracts/contracts/utils/cryptography/ECDSA.sol";
 // }
 
 contract PadiRegistry is Ownable {
-    using ECDSA for bytes32;
+    // using ECDSA for bytes32;
 
     // Enum to represent user tags
     enum UserTag { USER, PADI, VERIFIER }
@@ -39,7 +39,7 @@ contract PadiRegistry is Ownable {
 
 
     // IPFS contract address
-    address public ipfsContractAddress;
+    // address public ipfsContractAddress;
     address public padiAddress;
 
 
@@ -49,6 +49,11 @@ contract PadiRegistry is Ownable {
     // Event emitted when a verifier charges are updated
     event VerificationChargesUpdated(address indexed verifier, uint256 charges);
 
+    // Modifier to check if the sender has the user tag
+    modifier onlyUser() {
+        require(addressTags[msg.sender] == UserTag.USER, "Sender is not a user");
+        _;
+    }
 
     // Modifier to check if the sender has the verifier tag
     modifier onlyVerifier() {
@@ -62,18 +67,7 @@ contract PadiRegistry is Ownable {
         _;
     }
 
-    // Modifier to check if the sender is the owner
-    modifier onlyOwner() {
-        require(msg.sender == owner(), "Only the owner can call this function");
-        _;
-    }
-
-    // Constructor to set the IPFS contract address and padi address
-    // constructor(address _ipfsContractAddress, address _padiAddress) {
-    //     ipfsContractAddress = _ipfsContractAddress;
-    //     padiAddress = _padiAddress;
-    // }
-    constructor(address _padiAddress) {
+    constructor(address _padiAddress) Ownable(_padiAddress) {
         // ipfsContractAddress = _ipfsContractAddress;
         padiAddress = _padiAddress;
     }
@@ -94,11 +88,13 @@ contract PadiRegistry is Ownable {
     }
 
     // Function for a user to generate a unique ID using passport number and address
-    function generateUniqueHexID(string memory _passportNumber) external {
+    function generateUniqueHexID(string memory _passportNumber) external returns (bytes32 padiID) {
         require(addressTags[msg.sender] == UserTag.USER, "Only users can generate hex IDs");
 
         // Check if the hex ID already exists
-        require(!userData[msg.sender].hasHexID, "User already has a hex ID");
+        // require(!userData[msg.sender].hasHexID, "User already has a hex ID");
+        require(!userData[keccak256(abi.encodePacked(msg.sender, _passportNumber))].hasHexID, "User already has a hex ID");
+
 
         // Generate unique ID using keccak256
         bytes32 uniqueId = keccak256(abi.encodePacked(msg.sender, _passportNumber));
@@ -116,6 +112,11 @@ contract PadiRegistry is Ownable {
 
         // Store the hex ID
         userHexIDs[msg.sender] = uniqueId;
+        return uniqueId;
+    }
+
+    function getUserHexID() external onlyUser view returns (bytes32 padiID) {
+        return userHexIDs[msg.sender];
     }
 
     // Function for a verifier to verify a user's passport data
@@ -137,7 +138,8 @@ contract PadiRegistry is Ownable {
         payable(padiAddress).transfer(msg.value);
 
         // Return the user's passport number
-        return userData[msg.sender].passportNumber;
+        return userData[userHexIDs[msg.sender]].passportNumber;
+
     }
 
     // Function for a padi to view all user and verifier addresses
@@ -155,6 +157,16 @@ contract PadiRegistry is Ownable {
     }
 
     function isVerifierApproved(address _verifier) internal view returns (bool) {
+        address[] memory userVerifiers = verifiers[msg.sender];
+        for (uint256 i = 0; i < userVerifiers.length; i++) {
+            if (userVerifiers[i] == _verifier) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function externalIsVerifierApproved(address _verifier) external view returns (bool) {
         address[] memory userVerifiers = verifiers[msg.sender];
         for (uint256 i = 0; i < userVerifiers.length; i++) {
             if (userVerifiers[i] == _verifier) {
