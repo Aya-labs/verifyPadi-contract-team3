@@ -5,7 +5,7 @@ import "@openzeppelin-contracts/contracts/access/Ownable.sol";
 import "@giopenzeppelin-contracts/contracts/utils/cryptography/ECDSA.sol";
 
 // interface IPFS {
-//     function upload(string memory _data) external   returns (bytes32);
+//     function upload(string memory _data) external returns (bytes32);
 // }
 
 contract PadiRegistry is Ownable {
