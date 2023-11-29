@@ -6,16 +6,21 @@ import linkedin from '../../images/linkedin.png';
 import twitter from '../../images/twitter.png';
 
 const Connect = () => {
+
+    function dashboard() {
+        window.location.href = '/dashboard';
+    }
+
     return (
         <div>
             <nav className="bg-[#D5F1FF] h-24 w-full flex justify-between items-center ">
                 <img src={logo} alt="verifypadi logo" className='w-50 pl-20' />
-                <p>hello</p>
+                <p></p>
             </nav>
             <div className='flex  items-center flex-col h-screen'>
                 <img src={Check} alt="check gif" />
                 <p className='text-[#78B348] font-Prompt text-[24px] '>Wallet connected successfully</p>
-                <button className='mt-20 bg-[#4A6EFF] p-2 rounded-md text-[white] hover:-translate-y-2 transition ease-in-out duration-300'>Proceed to dashboard</button>
+                <button onClick={dashboard} className='mt-20 bg-[#4A6EFF] p-2 rounded-md text-[white] hover:-translate-y-2 transition ease-in-out duration-300'>Proceed to dashboard</button>
             </div>
             <footer className='h-40 bg-[#F3F3F3] w-full flex justify-around text-[#80819F]'>
                 <div className='pt-5 '>

@@ -116,3 +116,27 @@
     }
 
 }
+
+.my-custom-class {
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center;
+    background-color: black !important;
+    border-color: transparent !important;
+    color: #BBBECF !important;
+
+    background-repeat: no-repeat !important;
+    width: auto !important;
+}
+
+.my-custom-class:hover {
+    background-color: #4A6EFF !important;
+    border-color: transparent !important;
+    color: white !important;
+
+}
+
+.dashboard-item:not(:last-child) {
+    margin-bottom: 3px;
+
+}
