@@ -1,0 +1,1 @@
+import{o as r}from"./index-OE56k1X-.js";function i(e){const t=new URL(e).hostname;return t.endsWith(".thirdweb.com")||t==="localhost"||t==="0.0.0.0"}function a(e){return r(e).map(t=>{try{const n=new URL(t);return n.hostname.endsWith(".thirdweb.com")&&(n.pathname="",n.search=""),n.toString()}catch{return t}})}export{a as g,i};
