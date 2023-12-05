@@ -7,7 +7,7 @@ const Navbar = () => {
 
     //const navigate = useNavigate();
 
-
+//navigation to login page
 
     function handleClick() {
         window.location.href = '/Login';
