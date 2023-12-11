@@ -18,6 +18,9 @@ const SidebarAccount = () => {
     function forwardClicks() {
         window.location.href = '/dashboard';
     }
+    function forwardClicktoData() {
+        window.location.href = '/Datasharing';
+    }
 
     return (
         <div className='bg-gradient-to-tr from-[#145394] to-[#01033f] w-[20vw] h-[350vh]  flex  items-center flex-col '>
@@ -33,7 +36,7 @@ const SidebarAccount = () => {
                     <li className=' mb-5 flex  hover:bg-white hover:text-[#01033f] cursor-pointer hover:rounded-md '><img src={timer} className='w-[20px] h-[20px]' alt="home image" /><figcaption className='pl-2'>History</figcaption></li>
                     <li className=' mb-5 flex  hover:bg-white hover:text-[#01033f] cursor-pointer hover:rounded-md '><img src={workflow} className='w-[20px] h-[20px]' alt="home image" /><figcaption className='pl-2'>Request Mgt</figcaption></li>
                     <li className=' mb-5 flex  hover:bg-white hover:text-[#01033f] cursor-pointer hover:rounded-md '><img src={token} className='w-[20px] h-[20px]' alt="home image" /><figcaption className='pl-2'>VPT Token</figcaption></li>
-                    <li className=' mb-5 flex  hover:bg-white hover:text-[#01033f] cursor-pointer hover:rounded-md '><img src={share} className='w-[20px] h-[20px]' alt="home image" /><figcaption className='pl-2'>Data Sharing</figcaption></li>
+                    <li onClick={forwardClicktoData} className=' mb-5 flex  hover:bg-white hover:text-[#01033f] cursor-pointer hover:rounded-md '><img src={share} className='w-[20px] h-[20px]' alt="home image" /><figcaption className='pl-2'>Data Sharing</figcaption></li>
                     <li className=' mb-5 flex  hover:bg-white hover:text-[#01033f] cursor-pointer hover:rounded-md '><img src={Subscription} className='w-[20px] h-[20px]' alt="home image" /><figcaption className='pl-2'>User Plan</figcaption></li>
                     <li className='  flex  hover:bg-white hover:text-[#01033f] cursor-pointer hover:rounded-md '><img src={Analysis} className='w-[20px] h-[20px]' alt="home image" /><figcaption className='pl-2'>Analysis</figcaption></li>
                 </ul>
@@ -46,7 +49,7 @@ const SidebarAccount = () => {
             </div>
 
         </div>
-        )
+    )
 }
 
 

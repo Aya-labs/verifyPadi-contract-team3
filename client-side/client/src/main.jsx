@@ -6,12 +6,17 @@ import App from './pages/App'
 import Connect from './pages/connect'
 import Dashboard from './pages/dashboard'
 import Account from './pages/Account'
+import Datasharing from './pages/Datasharing'
+import IndividualLogin from './pages/IndividualLogin'
+import BusinessLogin from './pages/BusinessLogin'
+import InstitutionLogin from './pages/InstitutionLogin'
 
 //browser dom
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 
 
 //web3
@@ -37,6 +42,22 @@ const router = createBrowserRouter([
   {
     path: "/Account",
     element: <Account />,
+  },
+  {
+    path: "/Datasharing",
+    element: <Datasharing />,
+  },
+  {
+    path: "/IndividualLogin",
+    element: <IndividualLogin />,
+  },
+  {
+    path: "/BusinessLogin",
+    element: <BusinessLogin />,
+  },
+  {
+    path: "/InstitutionLogin",
+    element: <InstitutionLogin />,
   }
 ]);
 
