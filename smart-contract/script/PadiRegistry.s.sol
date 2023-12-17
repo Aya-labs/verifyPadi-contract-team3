@@ -21,9 +21,9 @@ contract DeployPadiRegistry is Script {
         // ...
 
         uint privateKey = vm.envUint("PRIVATE_KEY");
-        address account = vm.addr(privateKey);
+        address padiAddress = vm.addr(privateKey);
 
-        console2.log("Deployed PadiRegistry to: ", account);
+        console2.log("Deployed PadiRegistry to: ", padiAddress);
 
         vm.startBroadcast(privateKey);
         new PadiRegistry(padiAddress);
