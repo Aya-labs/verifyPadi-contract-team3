@@ -1,13 +1,20 @@
 import Man from '../../images/Man.png'
 import Rectangle from '../../images/rectanglefull.png'
 import Barcode from '../../images/barcode.png'
+import Profileidentifier from './Profileidentifier'
+import React, { useState } from "react"
 
 const Middle = () => {
+
+    const [showMymodal, setShowMyModal] = useState(false)
+
+    const handleOnClose = () => setShowMyModal(false)
+
     return (
         < div className="mt-20" >
             <div className="flex justify-around animate-moveinopacity ">
                 <h1 className='text-[#2B2D5F] text-[32px] font-AoboshiOne ml-20'>Account </h1>
-                <button className="font-Prompt text-[13.864px] text-[white] pr-16 pl-16 bg-[#4A6EFF] rounded-2xl ml-[20rem] hover:cursor-pointer hover:-translate-y-2 transition ease-in-out duration-300">Edit Profile Identifiers</button>
+                <button onClick={() => setShowMyModal(true)} className="font-Prompt text-[13.864px] text-[white] pr-16 pl-16 bg-[#4A6EFF] rounded-2xl ml-[20rem] hover:cursor-pointer hover:-translate-y-2 transition ease-in-out duration-300">Edit Profile Identifiers</button>
             </div>
 
             <div className="bg-[white] h-80 rounded-3xl w-[70vw] ml-20 mt-10 flex   animate-moveinright ">
@@ -32,6 +39,7 @@ const Middle = () => {
                 </div>
 
             </div>
+            <Profileidentifier onClose={handleOnClose} visible={showMymodal} />
         </div >
     )
 }

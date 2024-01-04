@@ -11,11 +11,13 @@ import IndividualLogin from './pages/IndividualLogin'
 import BusinessLogin from './pages/BusinessLogin'
 import InstitutionLogin from './pages/InstitutionLogin'
 
+
 //browser dom
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 
 
 

@@ -1,8 +1,16 @@
+import Submitidentifiers from "./Submitidentifiers"
+import React, { useState } from "react"
 
 
 const Forms = () => {
+    const [showMymodal, setShowMyModal] = useState(false)
+
+    const handleOnClose = () => setShowMyModal(false)
+
     return (
-        <div >
+
+
+        < div >
             <div className="flex justify-around mt-20 ">
                 <form className="ml-10" action="">
 
@@ -55,7 +63,7 @@ const Forms = () => {
             <div className="mt-20 flex-col ml-20 ">
                 <div className="bg-white w-[70vw] flex justify-between rounded-3xl p-5 border-2 border-[#BEEAFF]">
                     <h1 className="text-[#80819F] text-[32px] font-AoboshiOne">User identifiers</h1>
-                    <p className="text-[14px] bg-[rgba(74,110,225,0.10)] font-Prompt text-[white] pl-10 h-9 pt-2 pr-10 text-[14px] rounded-md hover:bg-[#4A6DFF] hover:-translate-y-2  transition ease-in-out">Submit your identifiers</p>
+                    <button onClick={() => setShowMyModal(true)} className="text-[14px] bg-[rgba(74,110,225,0.10)] font-Prompt text-[white] pl-10 h-9 pt-2 pr-10 text-[14px] rounded-md hover:bg-[#4A6DFF] hover:-translate-y-2  transition ease-in-out">Submit your identifiers</button>
                 </div>
                 <div className="bg-white w-[70vw] flex justify-between rounded-3xl p-5 border-2 border-[#BEEAFF] mt-10">
                     <h1 className="text-[#80819F] text-[32px] font-AoboshiOne">User Attestations</h1>
@@ -63,7 +71,8 @@ const Forms = () => {
                 </div>
 
             </div>
-        </div>
+            <Submitidentifiers onClose={handleOnClose} visible={showMymodal} />
+        </div >
     )
 }
 export default Forms
