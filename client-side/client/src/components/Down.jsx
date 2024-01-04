@@ -10,7 +10,7 @@ const Down = () => {
 
             <div className="flex justify-around ">
                 <h1 className='text-[#2B2D5F] text-[32px] font-AoboshiOne ml-20'>History</h1>
-                <button className="font-Prompt text-[12.864px] text-[white] pr-16 pl-16 bg-[#4A6EFF] rounded-2xl ml-[40rem]">See more</button>
+                <button className="font-Prompt text-[12.864px] text-[white] pr-16 pl-16 bg-[#4A6EFF] rounded-2xl ml-[40rem]  hover:-translate-y-2  transition ease-in-out duration-300">See more</button>
             </div>
             <div className="h-screen bg-[white] w-[70vw] rounded-3xl mt-10 ml-20 border-[#BEEAFF] border-2">
                 <div className="flex justify-evenly w-98 font-Prompt text-[16px] text-[#2B2D5F] pt-5 font-bold ">

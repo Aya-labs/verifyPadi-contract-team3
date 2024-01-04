@@ -1,5 +1,6 @@
 
 import video from '../../images/video.png';
+import graph from '../../images/linechart1.gif'
 
 const Mid = () => {
 
@@ -41,18 +42,19 @@ const Mid = () => {
                 <div >
 
                     <h1 className="font-AoboshiOne text-[#2B2D5F] text-[32px]">Get Started</h1>
-                    <div className='mt-10 pt-5 p-5 bg-white rounded-3xl'>
+                    <div className='mt-10 pt-5 p-5 bg-white rounded-3xl border-2 border-[#beeaff]'>
                         <img src={video} alt="video image" />
 
                         <p className='font-Prompt text-[15px] text-[#2B2D5F] pt-5'>Hello there 👋, am going to show you how to get the most out<br /> of VerifyPadi</p>
                     </div>
 
                 </div>
-                <div>
+                <div >
 
                     <h1 className="text-[#2B2D5F] font-AoboshiOne text-[32px]">Activities</h1>
-                    <div >
-
+                    <div className='mt-10 pt-5 p-5 bg-white rounded-3xl border-2 border-[#beeaff]'>
+                        <p className='font-Prompt text-[15px] text-[#2B2D5F] pb-5'>This is a historical list of your entire transaction within our <br /> platform.</p>
+                        <img className='w-[31vw]' src={graph} />
                     </div>
 
                 </div>
