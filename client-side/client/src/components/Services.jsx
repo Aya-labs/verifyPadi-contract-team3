@@ -24,7 +24,7 @@ const RevealOnScroll = ({ children }) => {
         };
     }, []);
 
-    const classes = `transition-opacity duration-200  
+    const classes = `transition-opacity duration-500  
         ${isVisible ? "opacity-100" : "opacity-0"
         }`;
 
@@ -62,13 +62,13 @@ const Services = () => {
                 <div className="flex flex-row items-center justify-center justify-between mr-20 ml-20 mt-20 p-5 ">
 
 
-                    <div onClick={forwardClicktoIndividualLogin} className="bg-[#4A6DFF] pl-5 pr-21 pt-5 flex justify-around rounded-md pb-2 w-80 hover:-translate-y-2 hover:scale-110 transition ease-in-out duration-300 ">
+                    <div onClick={forwardClicktoIndividualLogin} className="bg-[#4A6DFF] pl-5 pr-21 pt-5 flex justify-around rounded-md pb-2 w-80 hover:-translate-y-2 hover:scale-110 transition ease-in-out duration-300 cursor-pointer ">
                         <div className=''>
                             <img src={logo} alt="logo" className='w-16 rounded-md items-center justify-center' />
 
                         </div>
 
-                        <div >
+                        <div  >
 
                             <figcaption className='text-white pl-5 text-[20px] inline top-20 '>
                                 Individuals
@@ -78,7 +78,7 @@ const Services = () => {
 
                     </div>
 
-                    <div onClick={forwardClicktoBusinessLogin} className="bg-[#4A6DFF] pl-5 pr-21 pt-5 flex justify-around rounded-md pb-2 w-80 hover:-translate-y-2 hover:scale-110 transition ease-in-out duration-300">
+                    <div onClick={forwardClicktoBusinessLogin} className="bg-[#4A6DFF] pl-5 pr-21 pt-5 flex justify-around rounded-md pb-2 w-80 hover:-translate-y-2 hover:scale-110 transition ease-in-out duration-300 cursor-pointer">
                         <div className=''>
                             <img src={logo1} alt="logo" className='w-16 rounded-md items-center justify-center' />
 
@@ -94,7 +94,7 @@ const Services = () => {
 
                     </div>
 
-                    <div onClick={forwardClicktoInstitutionLogin} className="bg-[#4A6DFF] pl-5 pr-21 pt-5 flex justify-evenly rounded-md pb-2 w-80 hover:-translate-y-2 hover:scale-110 transition ease-in-out duration-300">
+                    <div onClick={forwardClicktoInstitutionLogin} className="bg-[#4A6DFF] pl-5 pr-21 pt-5 flex justify-evenly rounded-md pb-2 w-80 hover:-translate-y-2 hover:scale-110 transition ease-in-out duration-300 cursor-pointer">
                         <div className=''>
                             <img src={logo2} alt="logo" className='w-16 rounded-md items-center justify-center' />
 

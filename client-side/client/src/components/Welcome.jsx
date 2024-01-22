@@ -3,6 +3,12 @@ import logo from '../../images/phonebg.png';
 
 
 const Welcome = () => {
+
+    function handleClick() {
+        window.location.href = '/Login';
+    }
+
+
     return (
         <div className="bg-gradient-to-tr from-[#145394] to-[#01033f] h-[80vh] w-90 mt-10 flex-col items-align mr-14 ml-14 rounded-md relative overflow-hidden  ">
             <div className="flex flex-col items-center w-full h-auto pt-10 ">
@@ -21,7 +27,7 @@ const Welcome = () => {
             </div>
             <div className="flex items-center flex-row  justify-center pt-2  rounded-full">
 
-                <button className="text-white mr-20 font-md text-[20px] hover:bg-[#4A6DFf] rounded-md animate-moveinbottom p-2 ">Get started</button>
+                <button onClick={handleClick} className="text-white mr-20 font-md text-[20px] hover:bg-[#4A6DFf] rounded-md animate-moveinbottom p-2 ">Get started</button>
                 <button className="text-white  font-md text-[20px] hover:bg-[#4A6DFF] rounded-md animate-moveinbottom p-2"> View demo</button>
 
 
