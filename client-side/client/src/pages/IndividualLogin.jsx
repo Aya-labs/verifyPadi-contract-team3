@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../images/verifipadi logo trans 3.png';
-import logo1 from '../../images/verificationimag2.png';
+import logo1 from '../../images/Verificationimag2.png';
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 //import { Web3Button } from "@thirdweb-dev/react";
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react"
