@@ -44,11 +44,16 @@ Ensure your code passes all tests.
    ```bash
    $ forge test
    ```
-5. **Create a Pull Request:**
+6. **Create a Pull Request:**
 After adding a feature or making a correction, create a pull request (PR) to the main branch. Describe your changes and why they are necessary.
 
-5. **Review and Merge:**
+7. **Review and Merge:**
 Your PR will be reviewed by project maintainers, and once approved, it will be merged into the main branch.
+
+**Deployment command**
+```
+forge script script/PadiRegistry.s.sol
+```
 
 
 ## Support and Community
